@@ -1,0 +1,26 @@
+[
+  {
+    "episodeId": "77228",
+    "number": 1,
+    "title": "Episode 1",
+    "streaming": "https://megaplay.buzz/stream/s-2/77228/sub"
+  },
+  {
+    "episodeId": "77229",
+    "number": 2,
+    "title": "Episode 2",
+    "streaming": "https://megaplay.buzz/stream/s-2/77229/sub"
+  },
+  {
+    "episodeId": "77230",
+    "number": 3,
+    "title": "Episode 3",
+    "streaming": "https://megaplay.buzz/stream/s-2/77230/sub"
+  },
+  {
+    "episodeId": "77231",
+    "number": 4,
+    "title": "Episode 4",
+    "streaming": "https://megaplay.buzz/stream/s-2/77231/sub"
+  }
+]
