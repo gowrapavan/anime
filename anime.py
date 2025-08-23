@@ -137,6 +137,15 @@ def fetch_episode_list(anime_data_id: str):
 
 # === PIPELINE ===
 def fetch_full_anime(mal_id: int, title: str):
+    # pre-check: skip if already saved
+    safe_title = title.replace(" ", "_")
+    folder = os.path.join(OUTPUT_DIR, f"{safe_title}-{mal_id}")
+    meta_path = os.path.join(folder, "meta.json")
+
+    if os.path.exists(meta_path):
+        print(f"⏩ Skipping {title} (already saved)")
+        return
+
     meta = fetch_jikan_details(mal_id)
     if not meta:
         return
@@ -145,14 +154,12 @@ def fetch_full_anime(mal_id: int, title: str):
     episodes = []
     if info:
         episodes = fetch_episode_list(info["id"])
-        folder_name = f"{meta['title'].replace(' ', '_')}-{info['id']}"
+        folder = os.path.join(OUTPUT_DIR, f"{meta['title'].replace(' ', '_')}-{info['id']}")
     else:
         print(f"⚠️ No HiAnime match for {meta['title']}, saving meta only")
-        folder_name = f"{meta['title'].replace(' ', '_')}-{mal_id}"
+        folder = os.path.join(OUTPUT_DIR, f"{meta['title'].replace(' ', '_')}-{mal_id}")
 
-    folder = os.path.join(OUTPUT_DIR, folder_name)
     os.makedirs(folder, exist_ok=True)
-
     save_json(meta, folder, "meta.json")
     if episodes:
         save_json(episodes, folder, "episodes.json")
@@ -161,7 +168,7 @@ def fetch_full_anime(mal_id: int, title: str):
 
 # === RUN ===
 if __name__ == "__main__":
-    all_anime = fetch_all_anime(limit=200)  # ⚡ test small, increase later
+    all_anime = fetch_all_anime(limit=100)  # ⚡ smaller batch
     for a in all_anime:
         fetch_full_anime(a["mal_id"], a["title"])
         time.sleep(1)  # avoid rate limits
