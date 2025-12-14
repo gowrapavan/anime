@@ -7,9 +7,9 @@
   "status": "Finished Airing",
   "rating": "PG-13 - Teens 13 or older",
   "score": 7.21,
-  "rank": 3410,
-  "popularity": 3471,
-  "members": 50668,
+  "rank": 3409,
+  "popularity": 3470,
+  "members": 50678,
   "favorites": 274,
   "duration": "28 min per ep",
   "season": null,
@@ -30,8 +30,8 @@
   ],
   "demographics": [],
   "images": {
-    "image_url": "https://cdn.myanimelist.net/images/anime/13/26654.jpg",
-    "small_image_url": "https://cdn.myanimelist.net/images/anime/13/26654t.jpg",
-    "large_image_url": "https://cdn.myanimelist.net/images/anime/13/26654l.jpg"
+    "image_url": "https://cdn.myanimelist.net/images/anime/1404/106449.jpg",
+    "small_image_url": "https://cdn.myanimelist.net/images/anime/1404/106449t.jpg",
+    "large_image_url": "https://cdn.myanimelist.net/images/anime/1404/106449l.jpg"
   }
 }
